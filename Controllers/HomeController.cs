@@ -9,5 +9,10 @@ namespace FiestaInvitados.Controllers
         {
             return View();
         }
+
+        public ViewResult RsvpForm() {
+            // Como la accion se llama RsvpForm, se buscará una vista con ese nombre
+            return View();
+        }
     }
 }
