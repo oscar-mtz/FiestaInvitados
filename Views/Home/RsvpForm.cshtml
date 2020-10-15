@@ -1,3 +1,4 @@
+@model FiestaInvitados.Models.InvitadosRespuesta
 @{
     Layout = null;
 }
@@ -9,8 +10,28 @@
         <title>Forma de Reservacion</title>
     </head>
     <body>
-        <div>
-            Esto es la forma RsvpForm.cshtml
-        </div>
+        <form asp-action="RsvpForm" method="POST">
+            <div>
+                <label asp-for="Nombre">Tu nombre:</label>
+                <input asp-for="Nombre" />
+            </div>
+            <div>
+                <label asp-for="Email">Tu email:</label>
+                <input asp-for="Email" />
+            </div>
+            <div>
+                <label asp-for="Telefono"></label>
+                <input asp-for="Telefono" />
+            </div>
+            <div>
+                <label>¿Asistirá?</label>
+                <select asp-for="Asistira"> <!-- al parecer el asp-for acepta atributo sin "-->
+                    <option value="">Elige una opción:</option>
+                    <option value="true">Sí, asistiré.</option>
+                    <option value="false">No asistiré.</option>
+                </select>
+            </div>
+            <button type="submit">Confirmar</button>
+        </form>
     </body>
 </html>

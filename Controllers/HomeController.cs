@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using FiestaInvitados.Models;
 
 namespace FiestaInvitados.Controllers
 {
@@ -10,8 +10,16 @@ namespace FiestaInvitados.Controllers
             return View();
         }
 
+        [HttpGet] //método o accion predeterminado al navegar desde el navegador
         public ViewResult RsvpForm() {
             // Como la accion se llama RsvpForm, se buscará una vista con ese nombre
+            return View();
+        }
+
+        [HttpPost] //método comun al hacer submit en las formas
+        public ViewResult RsvpForm(InvitadosRespuesta respuesta)
+        {
+            //TODO: Procesar la respuesta
             return View();
         }
     }
