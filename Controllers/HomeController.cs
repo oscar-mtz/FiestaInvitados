@@ -19,8 +19,8 @@ namespace FiestaInvitados.Controllers
         [HttpPost] //método comun al hacer submit en las formas
         public ViewResult RsvpForm(InvitadosRespuesta respuesta)
         {
-            //TODO: Procesar la respuesta
-            return View();
+            Repositorio.AddRespuesta(respuesta);
+            return View("Gracias", respuesta);
         }
     }
 }
