@@ -1,0 +1,35 @@
+@model IEnumerable<FiestaInvitados.Models.InvitadosRespuesta>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Asistentes confirmados</title>
+    </head>
+    <body>
+        <h2>Personas que asistirán a la fiesta</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (FiestaInvitados.Models.InvitadosRespuesta respuesta in Model)
+                {
+                    <tr>
+                        <th>@respuesta.Nombre</th>
+                        <th>@respuesta.Email</th>
+                        <th>@respuesta.Telefono</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </body>
+</html>

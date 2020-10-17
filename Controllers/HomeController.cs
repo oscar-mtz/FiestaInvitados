@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using FiestaInvitados.Models;
+using System.Linq;
 
 namespace FiestaInvitados.Controllers
 {
@@ -21,6 +22,10 @@ namespace FiestaInvitados.Controllers
         {
             Repositorio.AddRespuesta(respuesta);
             return View("Gracias", respuesta);
+        }
+
+        public ViewResult VerInvitados(){
+            return View(Repositorio.Respuestas.Where(r => r.Asistira == true));
         }
     }
 }
