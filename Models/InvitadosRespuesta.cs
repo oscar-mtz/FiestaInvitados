@@ -1,12 +1,18 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace FiestaInvitados.Models
 {
-    public class InvitadosRespuesta 
+    public class InvitadosRespuesta
     {
-        public string Nombre {get; set;}
-        public string Email {get; set;}
-        public string Telefono {get; set;}
-        public bool? Asistira {get; set;}
+        [Required(ErrorMessage = "Por favor, ingresa tu nombre.")]
+        public string Nombre { get; set; }
+        [Required(ErrorMessage = "Por favor, ingresa tu email.")]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Por favor, ingresa tu teléfono.")]
+        public string Telefono { get; set; }
+        [Required(ErrorMessage = "¿Asistirás?")]
+        public bool? Asistira { get; set; }
 
     }
-    
+
 }

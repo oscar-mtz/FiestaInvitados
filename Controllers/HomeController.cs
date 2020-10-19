@@ -12,7 +12,8 @@ namespace FiestaInvitados.Controllers
         }
 
         [HttpGet] //método o accion predeterminado al navegar desde el navegador
-        public ViewResult RsvpForm() {
+        public ViewResult RsvpForm()
+        {
             // Como la accion se llama RsvpForm, se buscará una vista con ese nombre
             return View();
         }
@@ -20,11 +21,17 @@ namespace FiestaInvitados.Controllers
         [HttpPost] //método comun al hacer submit en las formas
         public ViewResult RsvpForm(InvitadosRespuesta respuesta)
         {
-            Repositorio.AddRespuesta(respuesta);
-            return View("Gracias", respuesta);
+            if (ModelState.IsValid)
+            {
+                Repositorio.AddRespuesta(respuesta);
+                return View("Gracias", respuesta);
+            }
+            else
+                return View();
         }
 
-        public ViewResult VerInvitados(){
+        public ViewResult VerInvitados()
+        {
             return View(Repositorio.Respuestas.Where(r => r.Asistira == true));
         }
     }
