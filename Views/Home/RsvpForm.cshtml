@@ -9,31 +9,33 @@
         <meta name="viewport" content="width=device-width" />
         <title>Forma de Reservacion</title>
         <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     </head>
     <body>
-        <form asp-action="RsvpForm" method="POST">
+        <h5 class="bg-primary text-white text-center m-2 p-2">Reserva</h5>
+        <form asp-action="RsvpForm" method="POST" class="m-2">
             <div asp-validation-summary=All></div>
-            <div>
+            <div class="form-group"> 
                 <label asp-for="Nombre">Tu nombre:</label>
-                <input asp-for="Nombre" />
+                <input asp-for="Nombre" class="form-control" />
             </div>
-            <div>
+            <div class="form-group">
                 <label asp-for="Email">Tu email:</label>
-                <input asp-for="Email" />
+                <input asp-for="Email" class="form-control" />
             </div>
-            <div>
+            <div class="form-group">
                 <label asp-for="Telefono"></label>
-                <input asp-for="Telefono" />
+                <input asp-for="Telefono" class="form-control" />
             </div>
-            <div>
+            <div class="form-group"> 
                 <label>¿Asistirá?</label>
-                <select asp-for="Asistira"> <!-- al parecer el asp-for acepta atributo sin "-->
+                <select asp-for="Asistira" class="form-control"> <!-- al parecer el asp-for acepta atributo sin "-->
                     <option value="">Elige una opción:</option>
                     <option value="true">Sí, asistiré.</option>
                     <option value="false">No asistiré.</option>
                 </select>
             </div>
-            <button type="submit">Confirmar</button>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
         </form>
     </body>
 </html>

@@ -8,11 +8,13 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <title>Asistentes confirmados</title>
     </head>
     <body>
+        <div class="text-center p-2">
         <h2>Personas que asistirán a la fiesta</h2>
-        <table>
+        <table class="table table-bordered table-striped table-sm"> 
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -31,5 +33,7 @@
                 }
             </tbody>
         </table>
+        <a asp-action="index" class="btn btn-secondary">Regresar</a>
+        </div>
     </body>
 </html>

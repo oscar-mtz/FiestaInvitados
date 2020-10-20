@@ -4,17 +4,21 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Fiesta - Party!</title>
-    </head>
-    <body>
-        <div>
-            <div>
-                Vamos a tener una gran fiesta. <br />
-                (To do: Vender mejor la idea. Agregar imagenes o algo.)
-            </div>
-            <a asp-action="RsvpForm">Reserva ahora</a>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Fiesta - Party!</title>
+</head>
+
+<body>
+    <div>
+        <div class="text-center">
+            <h3>Vamos a tener una gran fiesta!!! </h3>
+            <h4>Y TU estás invitado!</h4>
+            <a class="btn btn-primary" asp-action="RsvpForm">Reserva ahora</a>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
